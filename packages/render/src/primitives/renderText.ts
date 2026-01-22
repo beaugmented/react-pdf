@@ -190,7 +190,7 @@ const renderLine = (ctx: Context, line: AttributedString) => {
 
     if (run.attributes.backgroundColor) {
       const xAdvance = run.xAdvance ?? 0;
-      const overflowRight = isLastRun ? line.overflowRight ?? 0 : 0;
+      const overflowRight = isLastRun ? (line.overflowRight ?? 0) : 0;
 
       const backgroundRect = {
         x: 0,

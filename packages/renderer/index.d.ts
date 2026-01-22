@@ -597,11 +597,10 @@ declare namespace ReactPDF {
    */
   export class PDFViewer extends React.Component<PDFViewerProps> {}
 
-  interface PDFDownloadLinkProps
-    extends Omit<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      'href' | 'children'
-    > {
+  interface PDFDownloadLinkProps extends Omit<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    'href' | 'children'
+  > {
     /** PDF filename. Alias for anchor tag `download` attribute. */
     fileName?: string;
     document: React.ReactElement<DocumentProps>;

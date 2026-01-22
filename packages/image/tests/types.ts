@@ -19,11 +19,10 @@ export interface GlobalWithFetchMock extends Global {
   fetch: FetchMock;
 }
 
-export interface FetchMock
-  extends Mock<
-    [string | Request | undefined, RequestInit | undefined],
-    Promise<Response>
-  > {
+export interface FetchMock extends Mock<
+  [string | Request | undefined, RequestInit | undefined],
+  Promise<Response>
+> {
   (input: string | Request, init?: RequestInit): Promise<Response>;
 
   /**
