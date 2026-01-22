@@ -3,7 +3,7 @@ import { Origin, SafeNode } from '../types';
 
 const getTransformStyle =
   (s: 'transformOriginX' | 'transformOriginY') => (node: SafeNode) =>
-    isNil(node.style?.[s]) ? '50%' : node.style?.[s] ?? null;
+    isNil(node.style?.[s]) ? '50%' : (node.style?.[s] ?? null);
 
 /**
  * Get node origin

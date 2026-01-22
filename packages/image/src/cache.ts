@@ -3,7 +3,7 @@ const createCache = <T>({ limit = 100 } = {}) => {
 
   return {
     get: (key: string | null): T | undefined | null =>
-      key ? cache.get(key) ?? undefined : null,
+      key ? (cache.get(key) ?? undefined) : null,
     set: (key: string, value: T) => {
       cache.delete(key);
 
