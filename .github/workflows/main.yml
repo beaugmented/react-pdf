@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
     types: [opened, synchronize]
 
@@ -41,7 +41,8 @@ jobs:
 
       - uses: ./.github/actions/setup
       - run: mise use node@${{ matrix.node_version }}
-      
+      - run: bun run build
+
       - name: Run tests
         run: REACT_VERSION=${{ matrix.react_version }} bun run test
 
@@ -58,6 +59,6 @@ jobs:
 
       - uses: ./.github/actions/setup
       - run: mise use node@${{ matrix.node_version }}
-
+      - run: bun run build
       - name: Run E2E tests
         run: bun run --cwd e2e/node-esm run start
