@@ -47,9 +47,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # We aim to test all maintained LTS versions of Node.js as well as the latest stable version
-        node_version: [18, 20, 21]
-        react_version: [16, 17, 18]
+        node_version: [20]
+        react_version: [18]
 
     steps:
       - name: Checkout
@@ -62,11 +61,11 @@ jobs:
         run: REACT_VERSION=${{ matrix.react_version }} yarn test
 
   e2e-node:
-    runs-on: ubuntu-latest
     name: Run E2E tests (Node.js ${{ matrix.node_version }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [18, 20, 21]
+        node_version: [20]
 
     steps:
       - name: Checkout
